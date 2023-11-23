@@ -5,5 +5,3 @@ export const sample_func = (required: string, optional: string) => {
       : "This is the one arg instance: " + required
   );
 };
-
-// export default __sample_func;
