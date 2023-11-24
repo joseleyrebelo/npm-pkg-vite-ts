@@ -1,1 +1,1 @@
-export * from "./sample_func";
+export * from "./sample";
