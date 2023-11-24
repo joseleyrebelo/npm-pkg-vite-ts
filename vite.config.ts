@@ -21,7 +21,7 @@ export default defineConfig({
     },
     lib: {
       entry: resolvePath("src/index.ts"),
-      name: "__npm-package",
+      name: "index",
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
