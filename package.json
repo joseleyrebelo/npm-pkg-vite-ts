@@ -1,7 +1,7 @@
 {
-  "name": "react-spots",
+  "name": "npm-pkg-vite-ts",
   "version": "1.0.0",
-  "description": "React context helpers/tooling.",
+  "description": "Boiler plate NPM typescript package, using vite.",
   "author": "Joseley Rebelo",
   "license": "ISC",
   "type": "module",
@@ -11,6 +11,7 @@
   "style": "./dist/style.css",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.es.js",
       "require": "./dist/index.umd.js"
     }
@@ -19,9 +20,9 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "npm run test &&  npm run lint && tsc && vite build",
     "prepare": "npm run build",
-    "lint": "eslint src ",
+    "lint": "eslint --fix src/__tests__ ",
     "test": "jest"
   },
   "keywords": [],
@@ -33,6 +34,7 @@
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",
     "eslint": "^8.54.0",
+    "husky": "^8.0.3",
     "jest": "^29.7.0",
     "terser": "^5.24.0",
     "ts-jest": "^29.1.1",

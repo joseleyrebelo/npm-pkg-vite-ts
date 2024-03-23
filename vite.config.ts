@@ -4,12 +4,16 @@ import path from "path";
 import dts from "vite-plugin-dts";
 
 import { defineConfig } from "vite";
+// import react from "@vitejs/plugin-react-swc"; // react preset
 
 const resolvePath = (str: string) => path.resolve(__dirname, str);
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [dts({ rollupTypes: true })],
+  plugins: [
+    // react(), // react preset
+    dts({ rollupTypes: true }),
+  ],
   build: {
     reportCompressedSize: true,
     minify: "terser",
@@ -26,11 +30,7 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [...Object.keys(packageJson.peerDependencies)],
-      // output: {
-      //   globals: {
-      //     react: "React",
-      //   },
-      // },
+      // output: { globals: { react: "React" } }, // react preset
     },
   },
 });

@@ -1,4 +1,4 @@
-import { sample_func } from ".";
+import { sample_func } from "../sample";
 
 describe("sample_func", () => {
   it("one argument", () => {
